@@ -27,5 +27,20 @@ namespace MathOperations
         {
             return a / b;
         }
+
+        public static int exp(int a)
+        {
+            return (int)Math.Exp((double)a);
+        }
+
+        public static int root(int a)
+        {
+            return (int)Math.Sqrt((double)a);
+        }
+
+        public static int rand()
+        {
+            return new Random().Next();
+        }
     }
 }
