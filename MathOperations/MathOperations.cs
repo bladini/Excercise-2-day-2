@@ -8,23 +8,38 @@ namespace MathOperations
 {
     public class MathOperations
     {
-        public static int add(int a, int b)
+        public static string log { get; private set; }
+
+        private static void logWrite(string message)
         {
+            if (log == null)
+            {
+                log = "";
+            }
+            log += message + "\n";
+        }
+
+        public static double add(double a, double b)
+        {
+            logWrite(string.Format("{0} + {1} equals {2}", a, b, a + b));
             return a + b;
         }
 
-        public static int subtract(int a, int b)
+        public static double subtract(double a, double b)
         {
+            logWrite(string.Format("{0} - {1} equals {2}", a, b, a - b));
             return a - b;
         }
 
-        public static int multiply(int a, int b)
+        public static double multiply(double a, double b)
         {
+            logWrite(string.Format("{0} * {1} equals {2}", a, b, a * b));
             return a * b;
         }
 
-        public static int divide(int a, int b)
+        public static double divide(double a, double b)
         {
+            logWrite(string.Format("{0} / {1} equals {2}", a, b, a / b));
             return a / b;
         }
     }
